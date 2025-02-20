@@ -1,4 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,600;1,600&display=swap');
 @import "tailwindcss";
+
+
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -27,7 +30,7 @@ a:hover {
 body {
   margin: 0;
   display: flex;
-  place-items: center;
+  place-items: left;
   min-width: 320px;
   min-height: 100vh;
 }
