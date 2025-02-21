@@ -1,7 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types';
+import { FaBookmark } from "react-icons/fa";
 
-export default function Blog({blog}) {
+
+export default function Blog({blog, handleAddbookmarks,  handleReadingTime}) {
     const {id, title, cover, author, author_img, posted_date, reading_time, hashtags}=blog;
   return (
     
@@ -14,18 +16,26 @@ export default function Blog({blog}) {
                       <p className='text-2xl font-bold'>{author}</p>
                       <p>{posted_date}</p>
                     </div>
-              </div>
-                   <div>
-                        <p>{reading_time} min read</p>
-                   </div>
-            </div>
+                </div>
+                
+                  <div>
+                        <span>{reading_time} min read</span>
+                        <button onClick={()=>handleAddbookmarks(blog)}>
+                        <FaBookmark></FaBookmark>
+                        </button>
+                  </div>
+           </div>
 
                  <h3 className="text-4xl mb-4 font-bold">{title}</h3>
                     <p>
                     {
-                        hashtags.map((hash)=> <span><a href="">#{ hash}</a> </span>)
+                        hashtags.map((hash,idx)=> <span key={idx}><a href="">#{ hash}</a> </span>)
                     }
                     </p>
+                    <button
+                    onClick={()=>handleReadingTime(id, reading_time)} 
+                    className='text-purple-800 font-bold underline'>
+                        Mark as read</button>
         </div>
                  
   )
