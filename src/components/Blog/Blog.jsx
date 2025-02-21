@@ -26,7 +26,7 @@ export default function Blog({blog, handleAddbookmarks,  handleReadingTime}) {
                   </div>
            </div>
 
-                 <h3 className="text-4xl mb-4 font-bold">{title}</h3>
+                 <h3 className="text-4xl mb-4 mt-4 font-bold">{title}</h3>
                     <p>
                     {
                         hashtags.map((hash,idx)=> <span key={idx}><a href="">#{ hash}</a> </span>)
